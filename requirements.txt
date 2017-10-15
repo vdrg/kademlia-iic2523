@@ -1,0 +1,3 @@
+git+https://github.com/bmuller/rpcudp@python3.5
+git+https://github.com/vdrg/kademlia@python3.5
+
