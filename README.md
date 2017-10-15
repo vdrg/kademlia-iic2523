@@ -10,7 +10,7 @@ PD: tuve que modificar un poco la librería de kademlia para aceptar múltiples 
 ## Ejemplos
 
 * `examples/server.py`: este nodo va a estar corriendo en el cluster. Lo subí por si quieren probarlo localmente.
-* `examples/node.py`: este nodo procesa los comandos recibidos e interactúa con la DHT. Debe estar corriendo antes de ejecutar `set.py`/`get.py`.
+* `examples/node.py`: este nodo procesa los comandos recibidos e interactúa con la DHT. Recibe como argumento el puerto a escuchar. Debe estar corriendo antes de ejecutar `set.py`/`get.py`.
 * `examples/get.py`: recibe como argumento la llave que quieren buscar en la DHT.
 * `examples/set.py`: recibe como argumento una llave y un valor para setear en la DHT.
 
