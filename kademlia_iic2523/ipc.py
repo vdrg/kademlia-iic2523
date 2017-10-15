@@ -1,4 +1,5 @@
 import socket
+import pickle
 from asyncio import get_event_loop, CancelledError
 import os
 import sys
@@ -28,10 +29,10 @@ async def ipcListen(callback):
             if datagram:
                 response = await callback(datagram.decode("utf-8"))
                 if response:
-                    conn.send(response.encode("utf-8"))
+                    conn.send(pickle.dumps(response))
             conn.close()
-    except CancelledError:
-        pass
+    except Exception as e:
+        print(e)
     finally:
         print("Shutting down...")
         if sockAccept is not None:
@@ -50,7 +51,7 @@ def ipcSend(message, callback=None):
         if callback is not None:
             datagram = client.recv(1024)
             if datagram:
-                callback(datagram.decode("utf-8"))
+                callback(pickle.loads(datagram))
         client.close()
     else:
         print("Couldn't Connect!")
