@@ -27,5 +27,7 @@ Ustedes deben crear los programas `upload.py` y `download.py` (partan modificand
 Esta librería estará instalada en el cluster, por lo que simplemente deben importarla. Si quieren probar localmente, pueden instalarla con:
 
 ```
+$ pip install git+https://github.com/bmuller/rpcudp@python3.5
+$ pip install git+https://github.com/vdrg/kademlia@IIC2523
 $ pip install git+https://github.com/vdrg/kademlia-iic2523
 ```
