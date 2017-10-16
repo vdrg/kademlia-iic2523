@@ -17,7 +17,7 @@ async def ipcListen(callback):
 
     loop = get_event_loop()
 
-    print("Openened a unix socket...")
+    print("Openened a unix socket through file '.ipc'")
 
     sockAccept = None
 
@@ -34,7 +34,7 @@ async def ipcListen(callback):
     except Exception as e:
         print(e)
     finally:
-        print("Shutting down...")
+        print("Removing socket file...")
         if sockAccept is not None:
             #  sockAccept.set_exception(CancelledError)
             sockAccept.cancel()

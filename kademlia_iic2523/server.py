@@ -26,18 +26,18 @@ class Server(KademliaServer):
             self.alpha = data["alpha"]
             self.id = data["id"]
             if len(data["neighbors"]) > 0:
-                print(data["neighbors"])
                 loop = asyncio.get_event_loop()
                 loop.run_until_complete(self.bootstrap(data["neighbors"]))
 
         self.ipcTask = asyncio.ensure_future(ipcListen(lambda x: ipcCallback(self, x)))
 
         # Save state every 60 seconds
-        super().saveStateRegularly(".state", 60)
+        super().saveStateRegularly(STATE_FILE, 60)
 
     def stop(self):
         super().stop()
         if self.ipcTask is not None:
+            print(self.ipcTask)
             self.ipcTask.cancel()
 
 
