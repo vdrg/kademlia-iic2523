@@ -10,7 +10,7 @@ from kademlia_iic2523.server import Server
 PORT = sys.argv[1]
 
 # IP/PUERTO del servidor inicial que estará corriendo en el clúster
-initialNodes = [("192.168.1.106", 8468)] 
+initialNodes = [("192.168.1.101", 8468)] 
     
 # Pueden descomentar la línea siguiente para obtener más información sobre las operaciones
 #logging.basicConfig(level=logging.DEBUG)
